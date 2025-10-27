@@ -3,14 +3,12 @@ package com.example.dummy.responses;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import javax.management.ConstructorParameters;
-import java.beans.ConstructorProperties;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @AllArgsConstructor
 @Getter
-public class BaseResponce {
+public class BaseResponse {
 
     //private static final String GetRequest = "{\"login\":\"Login1\",\"status\":\"ok\"}"; пример ответа по статусу
 
