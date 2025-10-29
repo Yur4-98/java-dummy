@@ -2,23 +2,15 @@ package com.example.dummy.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @AllArgsConstructor
 @Getter
+@Setter
 public class BaseResponse {
-
-    //private static final String GetRequest = "{\"login\":\"Login1\",\"status\":\"ok\"}"; пример ответа по статусу
-
-    public static String responseStatus(String login, String status) {
-
-        String response = "\"{\n\"login\":\"" +
-                login + "\",\n\"status\":\"" +
-                status + "\"\n}";
-        return response;
-    }
 
     public static String responseData(String login, String password){
 
