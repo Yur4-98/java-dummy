@@ -28,7 +28,7 @@ public class Controller {
 
     @PostMapping
     public ResponseEntity<String> postStatus(@Valid @RequestBody dataRequest request) {
-        //delay.delay(1000); // задержка отклика
+        delay.delay(1000); // задержка отклика
 
         final BaseResponse response;
 
