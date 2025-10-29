@@ -1,11 +1,11 @@
 package com.example.dummy.requests;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
+import lombok.*;
+
 
 @Setter
 @Getter
@@ -13,22 +13,15 @@ import lombok.Setter;
 @AllArgsConstructor
 public class dataRequest {
 
+
+
+    @NotEmpty(message = "login не должен быть пустым")
     private String login;
+
+
+
+    @NotEmpty(message = "password не должен быть пустым")
     private String password;
-
-    public dataRequest(String json){
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            dataRequest request = objectMapper.readValue(json, dataRequest.class);
-            login = request.login;
-            password = request.password;
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-
 
     public String getlogin() {
         return login;

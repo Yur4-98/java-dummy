@@ -18,7 +18,7 @@ public class BaseResponse {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String FormattedDateTime = dateTime.format(formatter);
 
-        String response = "\"{\n\"login\":\"" +
+        String response = "{\n\"login\":\"" +
                 login + "\",\n\"password\":\"" +
                 password +"\",\n\"date\":\"" +
                 FormattedDateTime + "\"\n}";
