@@ -1,38 +1,82 @@
 package com.example.dummy.controller;
 
-import com.example.dummy.requests.dataRequest;
-import com.example.dummy.responses.BaseResponse;
-import com.example.dummy.utility.delay_emulator;
+
+import com.example.dummy.model.DataBaseWorker;
+import com.example.dummy.model.User;
+
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-
+import io.micrometer.core.instrument.Timer;
 
 @RestController
 @RequestMapping("/dummy")
 @Validated
 public class Controller {
 
-    delay_emulator delay = new delay_emulator();
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public class UserNotFoundException extends RuntimeException {
+        public UserNotFoundException(String message) {
+            super(message);
+        }
+    }
+
+
+    @Value("${global.delay}")
+    int nanos;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(Controller.class);
+
+    @Autowired
+    private DataBaseWorker dataBaseWorker;
+
+    public void delay(){
+        try {
+            Thread.sleep(nanos);
+        }catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     @GetMapping
-    public String getStatus(){
-        delay.delay(1000); // задержка отклика
-        return "{\n\"login\":\"Login1\",\n\"status\":\"ok\"\n}";
+    public ResponseEntity<User> getUser(@RequestBody User login){
+        delay(); // задержка отклика
+
+        User user = dataBaseWorker.getUserByLogin(login.getLogin());
+
+        if (user == null){
+            //System.out.println(login.getLogin());
+            throw  new UserNotFoundException("Invalid login");
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .header("Content-type","application/json")
+                .body(user);
     }
 
     @PostMapping
-    public ResponseEntity<String> postStatus(@Valid @RequestBody dataRequest request) {
-        delay.delay(1000); // задержка отклика
+    public ResponseEntity<User> postStatus(@Valid @RequestBody User user) {
+        delay(); // задержка отклика
 
-        final BaseResponse response;
+        user.setCurrentDate();
 
-        return new ResponseEntity<>(BaseResponse.responseData(request.getlogin(),request.getpassword()), HttpStatus.OK) ;
+        dataBaseWorker.postUser(user);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .header("Content-type","application/json")
+                .body(user);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -44,4 +88,14 @@ public class Controller {
         return ResponseEntity.badRequest().body("Validation Error: " + errorMessage);
     }
 
+    @ExceptionHandler(RuntimeException.class)
+    public void RuntimeException(RuntimeException exception) {
+        LOGGER.error("Произошла ошибка: {}", exception.getMessage(), exception);
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFoundException(UserNotFoundException exception) {
+        String errorMessage = exception.getMessage();
+        return ResponseEntity.internalServerError().body(errorMessage);
+    }
 }
