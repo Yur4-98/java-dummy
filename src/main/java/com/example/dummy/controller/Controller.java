@@ -16,19 +16,14 @@ import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.micrometer.core.instrument.Timer;
+
 
 @RestController
 @RequestMapping("/dummy")
 @Validated
 public class Controller {
 
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public class UserNotFoundException extends RuntimeException {
-        public UserNotFoundException(String message) {
-            super(message);
-        }
-    }
+
 
 
     @Value("${global.delay}")
@@ -54,10 +49,10 @@ public class Controller {
 
         User user = dataBaseWorker.getUserByLogin(login.getLogin());
 
-        if (user == null){
+        /*if (user == null){
             //System.out.println(login.getLogin());
             throw  new UserNotFoundException("Invalid login");
-        }
+        }*/
 
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -69,7 +64,7 @@ public class Controller {
     public ResponseEntity<User> postStatus(@Valid @RequestBody User user) {
         delay(); // задержка отклика
 
-        user.setCurrentDate();
+        user.setCurrentDate();//перенести в databaseworker
 
         dataBaseWorker.postUser(user);
 
@@ -93,8 +88,8 @@ public class Controller {
         LOGGER.error("Произошла ошибка: {}", exception.getMessage(), exception);
     }
 
-    @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<String> handleUserNotFoundException(UserNotFoundException exception) {
+    @ExceptionHandler(DataBaseWorker.UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFoundException(DataBaseWorker.UserNotFoundException exception) {
         String errorMessage = exception.getMessage();
         return ResponseEntity.internalServerError().body(errorMessage);
     }

@@ -2,9 +2,13 @@ package com.example.dummy.model;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.sql.*;
+
+
 
 @Component
 public class DataBaseWorker {
@@ -16,7 +20,12 @@ public class DataBaseWorker {
     @Value("${spring.datasource.password}")
     private String password;
 
-
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public class UserNotFoundException extends RuntimeException {
+        public UserNotFoundException(String message) {
+            super(message);
+        }
+    }
 
     private Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, username, password);
@@ -29,19 +38,19 @@ public class DataBaseWorker {
                 "WHERE users.login = (?);";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql);
+             ResultSet resultSet = preparedStatement.executeQuery();
         ) {
             preparedStatement.setString(1, login);
 
-            try(ResultSet resultSet = preparedStatement.executeQuery()){
-                if(resultSet.next()){
-                    User user = new User(resultSet.getString("login"),
-                            resultSet.getString("password"),
-                            resultSet.getString("email"),
-                            resultSet.getTimestamp("date"));
-                    return user;
-                }else
-                    return null;
-            }
+            if(resultSet.next()){
+                User user = new User(resultSet.getString("login"),
+                        resultSet.getString("password"),
+                        resultSet.getString("email"),
+                        resultSet.getTimestamp("date"));
+                return user;
+            }else
+                throw new UserNotFoundException("Invalid login");//выброс исключения
+
 
 
         } catch (SQLException e) {
