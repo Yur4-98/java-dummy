@@ -2,6 +2,7 @@ package com.example.dummy.controller;
 
 
 import com.example.dummy.model.DataBaseWorker;
+import com.example.dummy.model.FileWorker;
 import com.example.dummy.model.User;
 
 import jakarta.validation.Valid;
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 
 
 @RestController
@@ -49,10 +53,8 @@ public class Controller {
 
         User user = dataBaseWorker.getUserByLogin(login.getLogin());
 
-        /*if (user == null){
-            //System.out.println(login.getLogin());
-            throw  new UserNotFoundException("Invalid login");
-        }*/
+        FileWorker<User> fileWorker = new FileWorker<>();
+        fileWorker.write("got.txt",user);
 
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -72,6 +74,22 @@ public class Controller {
                 .status(HttpStatus.OK)
                 .header("Content-type","application/json")
                 .body(user);
+    }
+
+    @GetMapping("/file")
+    public ResponseEntity<ArrayList<User>> getUserFromFile(){
+        delay(); // задержка отклика
+
+        ArrayList<User> arr = new ArrayList<>();
+        FileWorker<User> fileWorker = new FileWorker<>();
+        arr = fileWorker.readUsersFromFile();
+
+        //System.out.println(arr.get(0).toString());
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .header("Content-type","application/json")
+                .body(arr);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

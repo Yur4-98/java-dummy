@@ -38,15 +38,16 @@ public class DataBaseWorker {
                 "WHERE users.login = (?);";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql);
-             ResultSet resultSet = preparedStatement.executeQuery();
+
         ) {
             preparedStatement.setString(1, login);
-
+            ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 User user = new User(resultSet.getString("login"),
                         resultSet.getString("password"),
                         resultSet.getString("email"),
                         resultSet.getTimestamp("date"));
+
                 return user;
             }else
                 throw new UserNotFoundException("Invalid login");//выброс исключения
