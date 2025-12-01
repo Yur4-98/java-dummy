@@ -112,3 +112,94 @@
 2025-12-01T19:03:30.482+03:00  INFO 24056 --- [dummy] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-12-01T19:03:30.483+03:00  INFO 24056 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-12-01T19:03:30.485+03:00  INFO 24056 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-01T19:32:53.127+03:00  INFO 27564 --- [dummy] [main] com.example.dummy.DummyApplication       : Starting DummyApplication using Java 25 with PID 27564 (E:\Bell Integrator\стажировка_задачи\01\java_dummy_1\dummy\target\classes started by qwert in E:\Bell Integrator\стажировка_задачи\01\java_dummy_1\dummy)
+2025-12-01T19:32:53.128+03:00  INFO 27564 --- [dummy] [main] com.example.dummy.DummyApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-12-01T19:32:53.905+03:00  INFO 27564 --- [dummy] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-01T19:32:53.922+03:00  INFO 27564 --- [dummy] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2025-12-01T19:32:54.287+03:00  INFO 27564 --- [dummy] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2025-12-01T19:32:54.301+03:00  INFO 27564 --- [dummy] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-01T19:32:54.301+03:00  INFO 27564 --- [dummy] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-01T19:32:54.341+03:00  INFO 27564 --- [dummy] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-01T19:32:54.342+03:00  INFO 27564 --- [dummy] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1165 ms
+2025-12-01T19:32:54.590+03:00  INFO 27564 --- [dummy] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-01T19:32:54.754+03:00  INFO 27564 --- [dummy] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2abafa97
+2025-12-01T19:32:54.755+03:00  INFO 27564 --- [dummy] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-01T19:32:54.782+03:00  INFO 27564 --- [dummy] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-01T19:32:54.816+03:00  INFO 27564 --- [dummy] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-12-01T19:32:54.841+03:00  INFO 27564 --- [dummy] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-01T19:32:55.068+03:00  INFO 27564 --- [dummy] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-01T19:32:55.137+03:00  INFO 27564 --- [dummy] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.14
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-01T19:32:55.329+03:00  INFO 27564 --- [dummy] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-01T19:32:55.333+03:00  INFO 27564 --- [dummy] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T19:32:55.421+03:00  WARN 27564 --- [dummy] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-01T19:32:55.896+03:00  INFO 27564 --- [dummy] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2025-12-01T19:32:55.951+03:00  INFO 27564 --- [dummy] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9091 (http) with context path '/'
+2025-12-01T19:32:55.958+03:00  INFO 27564 --- [dummy] [main] com.example.dummy.DummyApplication       : Started DummyApplication in 3.298 seconds (process running for 3.697)
+2025-12-01T19:33:08.452+03:00  INFO 27564 --- [dummy] [http-nio-9091-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-01T19:33:08.452+03:00  INFO 27564 --- [dummy] [http-nio-9091-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-01T19:33:08.452+03:00  INFO 27564 --- [dummy] [http-nio-9091-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-01T19:33:14.633+03:00  INFO 27564 --- [dummy] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-01T19:33:14.639+03:00  INFO 27564 --- [dummy] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-01T19:33:14.643+03:00  INFO 27564 --- [dummy] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T19:33:14.644+03:00  INFO 27564 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-01T19:33:14.646+03:00  INFO 27564 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-01T19:59:14.307+03:00  INFO 25948 --- [dummy] [main] com.example.dummy.DummyApplication       : Starting DummyApplication using Java 25 with PID 25948 (E:\Bell Integrator\стажировка_задачи\01\java_dummy_1\dummy\target\classes started by qwert in E:\Bell Integrator\стажировка_задачи\01\java_dummy_1\dummy)
+2025-12-01T19:59:14.309+03:00  INFO 25948 --- [dummy] [main] com.example.dummy.DummyApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-12-01T19:59:15.485+03:00  INFO 25948 --- [dummy] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-01T19:59:15.518+03:00  INFO 25948 --- [dummy] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2025-12-01T19:59:17.224+03:00  INFO 25948 --- [dummy] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2025-12-01T19:59:17.235+03:00  INFO 25948 --- [dummy] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-01T19:59:17.236+03:00  INFO 25948 --- [dummy] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-01T19:59:17.296+03:00  INFO 25948 --- [dummy] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-01T19:59:17.296+03:00  INFO 25948 --- [dummy] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2928 ms
+2025-12-01T19:59:17.691+03:00  INFO 25948 --- [dummy] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-01T19:59:17.895+03:00  INFO 25948 --- [dummy] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@685f5d0d
+2025-12-01T19:59:17.896+03:00  INFO 25948 --- [dummy] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-01T19:59:17.952+03:00  INFO 25948 --- [dummy] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-01T19:59:17.992+03:00  INFO 25948 --- [dummy] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-12-01T19:59:18.027+03:00  INFO 25948 --- [dummy] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-01T19:59:18.355+03:00  INFO 25948 --- [dummy] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-01T19:59:18.457+03:00  INFO 25948 --- [dummy] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.14
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-01T19:59:18.769+03:00  INFO 25948 --- [dummy] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-01T19:59:18.774+03:00  INFO 25948 --- [dummy] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T19:59:18.983+03:00  WARN 25948 --- [dummy] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-01T19:59:19.588+03:00  INFO 25948 --- [dummy] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2025-12-01T19:59:19.708+03:00  INFO 25948 --- [dummy] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9091 (http) with context path '/'
+2025-12-01T19:59:19.725+03:00  INFO 25948 --- [dummy] [main] com.example.dummy.DummyApplication       : Started DummyApplication in 5.984 seconds (process running for 6.415)
+2025-12-01T19:59:53.659+03:00  INFO 25948 --- [dummy] [http-nio-9091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-01T19:59:53.659+03:00  INFO 25948 --- [dummy] [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-01T19:59:53.661+03:00  INFO 25948 --- [dummy] [http-nio-9091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-12-01T20:01:05.138+03:00  INFO 25948 --- [dummy] [http-nio-9091-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x060xc00x010x000x060xbc0x030x030xbc0x080xa10x950x1a\0xf1a0xb10x870xe2<0xe30x910x16"0xd80xd30xe30x1930xc1zV0xa9j0xb60xf40x080x85T~ ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:402) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:272) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.48.jar:10.1.48]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2025-12-01T20:03:12.632+03:00  INFO 25948 --- [dummy] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-01T20:03:12.640+03:00  INFO 25948 --- [dummy] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-01T20:03:12.645+03:00  INFO 25948 --- [dummy] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T20:03:12.646+03:00  INFO 25948 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-01T20:03:12.647+03:00  INFO 25948 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
