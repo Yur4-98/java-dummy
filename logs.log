@@ -36,3 +36,79 @@
 2025-11-26T11:30:24.981+03:00  INFO 25088 --- [dummy] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-11-26T11:30:24.984+03:00  INFO 25088 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-11-26T11:30:24.985+03:00  INFO 25088 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-01T18:42:25.783+03:00  INFO 11716 --- [dummy] [main] com.example.dummy.DummyApplication       : Starting DummyApplication using Java 25 with PID 11716 (E:\Bell Integrator\стажировка_задачи\01\java_dummy_1\dummy\target\classes started by qwert in E:\Bell Integrator\стажировка_задачи\01\java_dummy_1\dummy)
+2025-12-01T18:42:25.784+03:00  INFO 11716 --- [dummy] [main] com.example.dummy.DummyApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-12-01T18:42:26.843+03:00  INFO 11716 --- [dummy] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-01T18:42:26.867+03:00  INFO 11716 --- [dummy] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2025-12-01T18:42:27.360+03:00  INFO 11716 --- [dummy] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-01T18:42:27.383+03:00  INFO 11716 --- [dummy] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-01T18:42:27.383+03:00  INFO 11716 --- [dummy] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-01T18:42:27.444+03:00  INFO 11716 --- [dummy] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-01T18:42:27.444+03:00  INFO 11716 --- [dummy] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1612 ms
+2025-12-01T18:42:27.775+03:00  INFO 11716 --- [dummy] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-01T18:42:28.042+03:00  INFO 11716 --- [dummy] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@153cb763
+2025-12-01T18:42:28.044+03:00  INFO 11716 --- [dummy] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-01T18:42:28.098+03:00  INFO 11716 --- [dummy] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-01T18:42:28.201+03:00  INFO 11716 --- [dummy] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-12-01T18:42:28.253+03:00  INFO 11716 --- [dummy] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-01T18:42:28.633+03:00  INFO 11716 --- [dummy] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-01T18:42:28.744+03:00  INFO 11716 --- [dummy] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.14
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-01T18:42:29.104+03:00  INFO 11716 --- [dummy] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-01T18:42:29.108+03:00  INFO 11716 --- [dummy] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T18:42:29.220+03:00  WARN 11716 --- [dummy] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-01T18:42:29.731+03:00  INFO 11716 --- [dummy] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2025-12-01T18:42:29.810+03:00  INFO 11716 --- [dummy] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-12-01T18:42:29.822+03:00  INFO 11716 --- [dummy] [main] com.example.dummy.DummyApplication       : Started DummyApplication in 4.595 seconds (process running for 6.762)
+2025-12-01T18:42:39.361+03:00  INFO 11716 --- [dummy] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-01T18:42:39.361+03:00  INFO 11716 --- [dummy] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-01T18:42:39.362+03:00  INFO 11716 --- [dummy] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-01T18:43:17.211+03:00  INFO 11716 --- [dummy] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-01T18:43:17.217+03:00  INFO 11716 --- [dummy] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-01T18:43:17.221+03:00  INFO 11716 --- [dummy] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T18:43:17.223+03:00  INFO 11716 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-01T18:43:17.225+03:00  INFO 11716 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-01T19:03:07.240+03:00  INFO 24056 --- [dummy] [main] com.example.dummy.DummyApplication       : Starting DummyApplication using Java 25 with PID 24056 (E:\Bell Integrator\стажировка_задачи\01\java_dummy_1\dummy\target\classes started by qwert in E:\Bell Integrator\стажировка_задачи\01\java_dummy_1\dummy)
+2025-12-01T19:03:07.242+03:00  INFO 24056 --- [dummy] [main] com.example.dummy.DummyApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-12-01T19:03:08.023+03:00  INFO 24056 --- [dummy] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-01T19:03:08.043+03:00  INFO 24056 --- [dummy] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2025-12-01T19:03:08.450+03:00  INFO 24056 --- [dummy] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2025-12-01T19:03:08.462+03:00  INFO 24056 --- [dummy] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-01T19:03:08.462+03:00  INFO 24056 --- [dummy] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-12-01T19:03:08.505+03:00  INFO 24056 --- [dummy] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-01T19:03:08.506+03:00  INFO 24056 --- [dummy] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1222 ms
+2025-12-01T19:03:08.778+03:00  INFO 24056 --- [dummy] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-01T19:03:08.949+03:00  INFO 24056 --- [dummy] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6a2d867d
+2025-12-01T19:03:08.951+03:00  INFO 24056 --- [dummy] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-01T19:03:08.993+03:00  INFO 24056 --- [dummy] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-01T19:03:09.025+03:00  INFO 24056 --- [dummy] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2025-12-01T19:03:09.043+03:00  INFO 24056 --- [dummy] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-01T19:03:09.255+03:00  INFO 24056 --- [dummy] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-01T19:03:09.318+03:00  INFO 24056 --- [dummy] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.14
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-01T19:03:09.563+03:00  INFO 24056 --- [dummy] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-01T19:03:09.567+03:00  INFO 24056 --- [dummy] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T19:03:09.664+03:00  WARN 24056 --- [dummy] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-01T19:03:10.143+03:00  INFO 24056 --- [dummy] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoints beneath base path '/actuator'
+2025-12-01T19:03:10.211+03:00  INFO 24056 --- [dummy] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2025-12-01T19:03:10.224+03:00  INFO 24056 --- [dummy] [main] com.example.dummy.DummyApplication       : Started DummyApplication in 3.375 seconds (process running for 3.691)
+2025-12-01T19:03:24.810+03:00  INFO 24056 --- [dummy] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-01T19:03:24.810+03:00  INFO 24056 --- [dummy] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-01T19:03:24.811+03:00  INFO 24056 --- [dummy] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-12-01T19:03:30.473+03:00  INFO 24056 --- [dummy] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-01T19:03:30.479+03:00  INFO 24056 --- [dummy] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-01T19:03:30.482+03:00  INFO 24056 --- [dummy] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-01T19:03:30.483+03:00  INFO 24056 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-01T19:03:30.485+03:00  INFO 24056 --- [dummy] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
