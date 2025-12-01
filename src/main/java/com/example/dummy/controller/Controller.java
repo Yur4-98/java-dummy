@@ -66,7 +66,7 @@ public class Controller {
     public ResponseEntity<User> postStatus(@Valid @RequestBody User user) {
         delay(); // задержка отклика
 
-        user.setCurrentDate();//перенести в databaseworker
+
 
         dataBaseWorker.postUser(user);
 
@@ -84,7 +84,7 @@ public class Controller {
         FileWorker<User> fileWorker = new FileWorker<>();
         arr = fileWorker.readUsersFromFile();
 
-        //System.out.println(arr.get(0).toString());
+
 
         return ResponseEntity
                 .status(HttpStatus.OK)

@@ -72,6 +72,7 @@ public class DataBaseWorker {
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getLogin());
             preparedStatement.setString(4, user.getPassword());
+            user.setCurrentDate();
             preparedStatement.setTimestamp(5, user.getDate());
 
             return preparedStatement.executeUpdate();

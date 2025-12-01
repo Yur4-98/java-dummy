@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class FileWorker<T> {
-    public void write(String file,T content) {
+    public void write(String file,T content) {//filename задать через properties
         ObjectMapper mapper = new ObjectMapper();
         StringWriter writer= new StringWriter();
         try(FileWriter wr = new FileWriter(file, true)) {
@@ -40,9 +40,9 @@ public class FileWorker<T> {
         }
         return arr;
     }
-    public ArrayList<User> readUsersFromFile() {
+    public ArrayList<User> readUsersFromFile() {//считать в начале + выбор нужного
 
-        String file = "Users.txt";
+        String file = "Users.txt";//файл в ресурсах
         ArrayList<User> arr = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
         try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
