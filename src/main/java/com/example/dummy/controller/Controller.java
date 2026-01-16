@@ -48,7 +48,7 @@ public class Controller {
     }
 
 
-    /*@GetMapping
+    @GetMapping
     public ResponseEntity<User> getUser(@RequestBody User login){
         delay(); // задержка отклика
 
@@ -75,8 +75,8 @@ public class Controller {
                 .status(HttpStatus.OK)
                 .header("Content-type","application/json")
                 .body(user);
-    }*/
-
+    }
+/*
     @GetMapping
     public CompletableFuture<ResponseEntity<User>> getUser(@RequestBody User login) {
         return CompletableFuture.supplyAsync(() -> {
@@ -108,7 +108,7 @@ public class Controller {
                     .header("Content-type", "application/json")
                     .body(user);
         });
-    }
+    }*/
 
     @GetMapping("/file")
     public ResponseEntity<User> getUserFromFile(@RequestBody User user){
