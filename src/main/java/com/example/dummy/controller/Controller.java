@@ -54,7 +54,7 @@ public class Controller {
         User user = dataBaseWorker.getUserByLogin(login.getLogin());
 
         FileWorker<User> fileWorker = new FileWorker<>();
-        fileWorker.write("got.txt",user);
+        fileWorker.write(user);
 
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -77,19 +77,19 @@ public class Controller {
     }
 
     @GetMapping("/file")
-    public ResponseEntity<ArrayList<User>> getUserFromFile(){
+    public ResponseEntity<User> getUserFromFile(@RequestBody User user){
         delay(); // задержка отклика
 
-        ArrayList<User> arr = new ArrayList<>();
+        User user1 = new User();
         FileWorker<User> fileWorker = new FileWorker<>();
-        arr = fileWorker.readUsersFromFile();
+        user1 = fileWorker.readUsersFromFile(user.getLogin());
 
 
 
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .header("Content-type","application/json")
-                .body(arr);
+                .body(user1);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
