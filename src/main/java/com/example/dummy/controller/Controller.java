@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 
 
 @RestController
@@ -47,7 +48,7 @@ public class Controller {
     }
 
 
-    @GetMapping
+    /*@GetMapping
     public ResponseEntity<User> getUser(@RequestBody User login){
         delay(); // задержка отклика
 
@@ -74,6 +75,39 @@ public class Controller {
                 .status(HttpStatus.OK)
                 .header("Content-type","application/json")
                 .body(user);
+    }*/
+
+    @GetMapping
+    public CompletableFuture<ResponseEntity<User>> getUser(@RequestBody User login) {
+        return CompletableFuture.supplyAsync(() -> {
+            delay(); // задержка отклика
+
+            User user = dataBaseWorker.getUserByLogin(login.getLogin());
+
+            FileWorker<User> fileWorker = new FileWorker<>();
+            // Асинхронная запись в файл
+            CompletableFuture.runAsync(() -> fileWorker.write(user));
+
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .header("Content-type", "application/json")
+                    .body(user);
+        });
+    }
+
+    @PostMapping
+    public CompletableFuture<ResponseEntity<User>> postStatus(@Valid @RequestBody User user) {
+        return CompletableFuture.supplyAsync(() -> {
+            delay(); // задержка отклика
+
+            // Асинхронное сохранение в БД
+            CompletableFuture.runAsync(() -> dataBaseWorker.postUser(user));
+
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .header("Content-type", "application/json")
+                    .body(user);
+        });
     }
 
     @GetMapping("/file")
